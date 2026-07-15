@@ -1,5 +1,5 @@
-let a:number=100;
-console.log(a);
+let atype:number=100;
+console.log(atype);
 
 //?Type Annotation - Type Annotation is a concept in which we explicitly provide a datatype to a variable
 
@@ -75,8 +75,8 @@ console.log(`my age is ${age}`); //! backticks
 
 //? number - A number datatype is a primitive datatype which is used to store a number value.
 
-let num:number=10; //!integer value
-console.log(num);
+let num1:number=10; //!integer value
+console.log(num1);
 
 let num2:number=15.60;
 console.log(num2); //! decimal value
@@ -181,3 +181,185 @@ user4={
 }
 console.log(user4);
 console.log(user4.userAddress.city); 
+
+//? Type annotation or an object with method - (A method is defined as a function which is written inside an object as a property.)
+
+//Example 1:
+let calculator : {
+    add : (a:number,b:number) => number
+}
+calculator={
+    add:(a, b)=> {
+        return a+b
+    }
+}
+console.log(calculator.add(50,100));
+
+//Example 2:
+let car:{
+    car_color:string,
+    car_brand:string,
+    car_speed:number,
+    car_start:()=>void,
+    car_stop:()=>void,
+    car_accelerate:()=>void
+}
+car={
+    car_color:"black",
+    car_brand:"BMW",
+    car_speed:120,
+    car_start:()=>{
+        console.log("These is a car start");
+    },
+    car_stop:()=>{
+        console.log("These is a car stop");
+    },
+    car_accelerate:()=>{
+        console.log("These is a car accelarate");
+    }
+}
+car.car_start();
+car.car_accelerate();
+car.car_stop();
+
+//? Object with an array:
+let product:{
+    // key:value
+    product_name:string,
+    product_price:number,
+    product_description:string[]
+}
+product={
+    product_name:"SAMSUNG",
+    product_price:158000,
+    product_description:["Smart phone","128GB","white","3 year warrenty"]
+}
+console.log(product);
+
+//Task 1:
+/*
+* 1. Create an object using a function(method) with type annotation where you take two numbers and perform addition, subtraction, division, multiplication to that number.
+*/
+let basicCalculator : {
+    add:(a:number,b:number)=>number,
+    sub:(a:number,b:number)=>number,
+    div:(a:number,b:number)=>number,
+    mul:(a:number,b:number)=>number
+}
+basicCalculator={
+    add:(a,b)=>a+b,
+    sub:(a,b)=>a-b,
+    div:(a,b)=>a/b,
+    mul:(a,b)=>{return a*b}
+}
+console.log(basicCalculator.add(10,5));
+console.log(basicCalculator.sub(10,5));
+console.log(basicCalculator.div(10,5));
+console.log(basicCalculator.mul(10,5));
+//Task 2:
+/*
+* 2. Create an object of library with type annotation where properties are - library_name(string),books(strings of array)
+*/
+let library:{
+    library_name:string,
+    books:string[]
+}
+library={
+    library_name:"v.u.c",
+    books:["Automic Habit","Rich and Poor Dad","Deep Work"]
+}
+console.log(library);
+
+//Task 3:
+/*
+*3. Create an object of school with type annotation where properties are school_name(string),principal_name(string)and one nested property of class which contains properties of class_number(number) and student_count(number).
+*/
+let school:{
+    school_name:string,
+    principal_name:string,
+    class:{
+        class_number:number,
+        student_count:number
+    }
+}
+school={
+    school_name:"PSF School",
+    principal_name:"Siva Ranjini",
+    class:{
+        class_number:104,
+        student_count:58
+    }
+}
+console.log(school);
+
+//Task 4:
+/*
+*4. create an object of an employee with type annotation and its properties are emp_id(number),emp_name(string),emp_dept(string),emp_sal(number);here emp_name is optional
+*/
+let employee:{
+    emp_id:number,
+    emp_name?:string,
+    emp_dept:string,
+    emp_sal:number
+}
+employee={
+    emp_id:1,
+    emp_dept:"Tester",
+    emp_sal:200000
+}
+console.log(employee);
+
+// ?Array - An array is non primitive datatype which is used to store a collection of items and it is represented by a [].
+// ! It is consisting two types - 
+/*
+* Homogenous array - Same datatype value.
+* Heterogenous array - different datatype values,
+*/
+
+let array:string[]=["ride","work","joy","happy","productive"];
+console.log(array);
+console.log(array[2]);
+array[2]="enjoy";
+console.log(array);
+
+let color:string[]=["red","pink","yellow","black","white"];
+console.log("---original array----")
+console.log(color);
+console.log("---push - blue----");
+color.push("blue");
+console.log(color);
+console.log("----pop - remove element at the end-----");
+color.pop();
+console.log(color);
+console.log("---unshift - gray----");
+color.unshift("gray");
+console.log(color);
+console.log("----shift - remove element at the beginning------");
+color.shift();
+console.log(color);
+
+//Task: array homogeneous
+//! 1. Create an array which stores marks of a student using type annotation. 
+let student:number[]=[80,90,99,100,97];
+console.log(student);
+//! 2. create an array of fruits name with type annotation 
+let fruitsName:string[]=["orange","guva","apple","banana"]; 
+console.log(fruitsName);
+//! 3. create an array of scores and using push method add somes scores into an array with type annotation. 
+let score:number[]=[];
+score.push(100);
+score.push(99);
+score.push(98);
+console.log(score);
+//! 4. create an array of numbers with type annotation where use the filter method to print only the even numbers present in the array. 
+let evenNum:number[]=[10,55,22,74,93];
+let even:number[]=evenNum.filter((a)=>{
+    return a%2==0;
+})
+console.log(even);
+//! 5. create a nested array with type annotation of number. 
+let NestedArray:string[][]=[
+    ["Hi","Hello","Hey"],["welcome","Good Morning","Good Evening"],["Friends","students","people"]]
+console.log(NestedArray);
+
+
