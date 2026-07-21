@@ -1,4 +1,4 @@
-//? union datatype
+//? union datatype - In typescript a union datatype is a type of datatype which is used to store multiple type of data into a variable.
 
 let example:String | number | Boolean
 example = "Typescript"
@@ -34,15 +34,16 @@ console.log(obj);
 function demo(userid:string|number){
 console.log("user id is ",userid);
 }
-demo("ABC");
-demo(123);
-// demo(true);
+demo("ABC");    //!with a string value
+demo(123); //! witha number value
+// demo(true); //! Error: Only string, number allowed.
 
 //? union type narrowing - It is defined as the one of the type of union datatype where we need to check the type of the value assigned to a variable before it is been executed. Union Type narrowing is always written inside a function.
 function demo2(example:string|number){
     if(typeof example=="string")
     {
         return example.toUpperCase();
+        // return example=false //!boolean cannot assign for string and number
     }
     else if(typeof example == "number")
     {
@@ -53,7 +54,8 @@ console.log(demo2("TypeScript"));
 console.log(demo2(10));
 // console.log(demo2(true));
 
-//?Type Alias
+//?Type Alias - It is one concept of the custom datatype where we provide a alias name consisting a structure of an element.
+
 //!Syntax - type custom_name/alias_name = type
 
 //? type alias with a varible:
@@ -65,7 +67,7 @@ console.log(username);
 let username2:demo1="Arya"
 console.log(username2);
 
-// let num:demo1=95; //!will get an error
+// let num:demo1=95; //! Error: string only allowed
 console.log("---------------------------");
 
 //? type alias with object:
@@ -148,36 +150,3 @@ console.log(add(10,20));
 console.log(sub(100,50));
 
 console.log("---------------------------");
-//! Type Alias - Assignment
-//* 1. Create an online shopping product type alias.
-type onlineShopping=string[];
-let product1:onlineShopping=["Note","Pen","Pencil","Soap"];
-console.log(product1);
-console.log("---------------------------");
-//* 2. Create a student report card
-type reportCard={
-    Tamil:number,
-    English:number,
-    Maths:number,
-    Science:number,
-    Social:number,
-}
-let student1:reportCard={
-    Tamil:90,
-    English:89,
-    Maths:99,
-    Science:98,
-    Social:99,
-}
-let student2:reportCard={
-    Tamil:89,
-    English:78,
-    Maths:89,
-    Science:78,
-    Social:90,
-}
-console.log(student1);
-console.log(student2);
-console.log("---------------------------");
-//* 3. Create employee payroll detail
-type payroll=[]
