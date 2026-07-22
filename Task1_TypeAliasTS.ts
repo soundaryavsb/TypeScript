@@ -29,5 +29,32 @@ let student2:reportCard={
 console.log(student1);
 console.log(student2);
 console.log("---------------------------");
-//* 3. Create employee payroll detail
-type payroll=[]
+// //* 3. Create employee payroll detail
+type payroll={
+    empid:number,
+    empName:string,
+    salary:number,
+    bonus:number,
+    Designation:string
+}
+let Suresh:payroll={
+ empid: 1001,
+ empName: "Suresh",
+ salary: 120000,
+ bonus: 30000,
+ Designation: "Manager"
+}
+let Ramya:payroll={
+     empid: 1002,
+ empName: "Ramya",
+ salary: 68000,
+ bonus: 20000,
+ Designation: "Team Manager"
+}
+console.log(Suresh);
+console.log(Ramya);
+console.log("Suresh Designation: ",Suresh.Designation);
+console.log("Ramya Designation: ",Ramya.Designation);
+console.log("---------------------------");
+
+
