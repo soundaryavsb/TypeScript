@@ -63,3 +63,4 @@ function demoloop():never{
     console.log("End");
 }   
 demoloop();
+console.log("------------Assessment completed----------");

@@ -586,20 +586,3 @@ console.log(Orders([true,123]));
 //! 5. create a tuple for user details (username, age, address- optional)
 let user_details:[string,number,string?]=["Arya",5]
 console.log(user_details);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
