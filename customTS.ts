@@ -150,3 +150,15 @@ console.log(add(10,20));
 console.log(sub(100,50));
 
 console.log("---------------------------");
+
+//? Alias Extending
+type person={
+    name:string
+}
+type employee=person&{ 
+    age:number}
+let person_details:employee={
+    name:"ABD",
+    age:28
+}
+console.log(person_details);
