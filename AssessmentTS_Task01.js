@@ -12,29 +12,32 @@ let course1 = {
 console.log(student1);
 console.log(course1);
 console.log("-----Question 2------");
-let Alldetails1 = {
+let allDetails1 = {
     name: "Arya",
     age: 28,
     emp_id: 1001,
     department: "Tester",
     sal: 200000
 };
-console.log(Alldetails1);
+console.log(allDetails1);
 console.log("-----Question 3------");
-let loginFun1 = {
-    auth(userName, password) {
-        console.log("User Name:", userName, "Password: ", password);
-    }
+function data(a) {
+    console.log(a);
+}
+let object = {
+    username: "Admin",
+    password: "Admin@123",
+    email: "Admin@gmail.com",
+    phoneno: 9988776655
 };
-let profileFun1 = {
-    prof(email, phone_no) {
-        console.log("email ID: ", email, "Phone Number:", phone_no);
-    }
+data(object);
+function process_order(a) {
+    console.log(a);
+}
+let object1 = {
+    customer_name: "Charu",
+    order_id: 2345,
+    amount: 3200,
+    payment_method: "UPI"
 };
-loginFun1.auth("Admin", "Admin123");
-profileFun1.prof("Admin@gmail.com", 9923422719);
-/*
-
-
-4. create two type alias where the first is of customer with properties as customer_name and order_id, the second is of payment with properties of amount and payment_method. create a function process_order() that accepts a parameter using intersection of both types and print the detail.
-*/ 
+process_order(object1);
