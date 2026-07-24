@@ -69,10 +69,23 @@ profileFun1.prof("Admin@gmail.com",9923422719);
 
 //* 4. create two type alias where the first is of customer with properties as customer_name and order_id, the second is of payment with properties of amount and payment_method. create a function process_order() that accepts a parameter using intersection of both types and print the detail.  
 type customer={
-    customerDetails:(customer_name:string,order_id:number)=>void;
+    // customerDetails:(customer_name:string,order_id:number)=>void;
+    customer_name:string,
+    order_id:number
 }
 type payment={
-    paymentDetails:(amount:number,payment_method:string)=>void;
+    // paymentDetails:(amount:number,payment_method:string)=>void;
+    amount:number,
+    payment_method:string
 }
-type process=customer&payment;
-let process_order:
+type process_order=()=>customer&payment;
+let order1:process_order={
+    customer_name:"ABC",
+    order_id:101,
+    
+
+}
+// type process=customer&payment;
+// let process_order:{
+    
+// }
