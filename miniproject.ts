@@ -41,24 +41,50 @@ console.log(calculateGrade(student2));
 
 //* 2. create a type alias as task then add some properties as id, title, is_completed then provide three function as add task, completed and delete the task.
 
-type task={
+type Task={
     id:number,
     title:string,
     is_completed:boolean
 }
-function addtask(a:task){
-    console.log(a);
+let taskList:Task[]=[];
+
+function addtask(a:Task){
+    taskList.push(a);
 }
-function completed(){
+function completed(a:number){
+    
 }
-function deletetask(){
+function deletetask(a:102){
+
 }
-let object:task={
-    id:5,
-    title:"Add submit button",
+let object1:Task={
+        id:101,
+        title:"Requirement Analysis",
+        is_completed:false    
+    }
+console.log(taskList);
+addtask(object1);
+console.log(taskList);
+let object2:Task={
+    id:102,
+    title:"Data Collection",
     is_completed:true
 }
-addtask(object);
-
+addtask(object2);
+console.log(taskList);
+completed(102);
+    // {
+    //     id:101,
+    //     title:"Requirement Analysis",
+    //     is_completed:false
+    // },
+    // {
+    //     id:102,
+    //     title:"Data Collection",
+    //     is_completed:true
+    // }
+    //  id:103,
+    // title:"Done",
+    // is_completed:true
 /*
 3.create a union type which is accepting number or string values then perform operation as +,*,-,/ use type narrowing concept over here.4.create an interface for user properties as name, email and create one more interface as admin with role and permission as the properties and then do the intersection and provide a function to display the full details.   */
