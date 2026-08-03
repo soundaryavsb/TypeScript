@@ -88,3 +88,9 @@ completed(102);
     // is_completed:true
 /*
 3.create a union type which is accepting number or string values then perform operation as +,*,-,/ use type narrowing concept over here.4.create an interface for user properties as name, email and create one more interface as admin with role and permission as the properties and then do the intersection and provide a function to display the full details.   */
+let value:number|string;
+value="10"
+if(typeof value as string)
+{
+    // value=number of value;
+}
